@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Promisify Practice</title>
+</head>
+<body>
+	<h1>Did the promise finish?</h1>
+	<div class="completion">Not yet</div>
+	<script>
+		
+let p = new Promise((resolve,reject) =>{
+    let a=1+2;
+    if(a==2){
+        resolve("Success");
+    } else{
+        reject("Failed");
+    }
+});
+
+var completion = document.querySelector('.completion');
+p.then((message)=>{
+    console.log("Passed : "+ message);
+    completion.innerHTML =  "Passed : "+ message;
+}).catch((message)=>{
+    console.log("This :"+message);
+    completion.innerHTML =  "Passed : "+ message;
+})
+
+
+	</script>
+</body>
+</html>
